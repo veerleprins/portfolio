@@ -9,6 +9,7 @@ import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
 import sveltePreprocess from 'svelte-preprocess'
+import alias from '@rollup/plugin-alias'
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -25,24 +26,38 @@ const preprocess = sveltePreprocess({
     includePaths: ['src'],
   },
 })
+const aliases = alias({
+  resolve: ['.svelte', '.js'],
+  entries: [
+    {
+      find: '@/components',
+      replacement: path.resolve(__dirname, 'src/components'),
+    },
+    {
+      find: '@/styles',
+      replacement: path.resolve(__dirname, 'src/styles'),
+    },
+    {
+      find: '@/stores',
+      replacement: path.resolve(__dirname, 'src/stores'),
+    },
+  ],
+})
 
 export default {
   client: {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
+      aliases,
       replace({
-        preventAssignment: true,
-        values: {
-          'process.browser': true,
-          'process.env.NODE_ENV': JSON.stringify(mode),
-        },
+        'process.browser': true,
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       svelte({
-        compilerOptions: {
-          dev,
-          hydratable: true,
-        },
+        dev,
+        hydratable: true,
+        emitCss: true,
         preprocess,
       }),
       url({
@@ -52,6 +67,7 @@ export default {
       resolve({
         browser: true,
         dedupe: ['svelte'],
+        // aliases,
       }),
       commonjs(),
 
@@ -93,20 +109,15 @@ export default {
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
+      aliases,
       replace({
-        preventAssignment: true,
-        values: {
-          'process.browser': false,
-          'process.env.NODE_ENV': JSON.stringify(mode),
-        },
+        'process.browser': false,
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       svelte({
-        compilerOptions: {
-          dev,
-          generate: 'ssr',
-          hydratable: true,
-        },
-        emitCss: false,
+        generate: 'ssr',
+        hydratable: true,
+        dev,
         preprocess,
       }),
       url({
@@ -116,12 +127,14 @@ export default {
       }),
       resolve({
         dedupe: ['svelte'],
+        // aliases,
       }),
       commonjs(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules
     ),
+
     preserveEntrySignatures: 'strict',
     onwarn,
   },
@@ -132,15 +145,13 @@ export default {
     plugins: [
       resolve(),
       replace({
-        preventAssignment: true,
-        values: {
-          'process.browser': true,
-          'process.env.NODE_ENV': JSON.stringify(mode),
-        },
+        'process.browser': true,
+        'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       commonjs(),
       !dev && terser(),
     ],
+
     preserveEntrySignatures: false,
     onwarn,
   },
