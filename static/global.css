@@ -1,7 +1,18 @@
-@font-face {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* * { margin: 0; padding: 0; box-sizing: border-box; } */
+
+/* @font-face {
   font-family: 'Vendura';
   src: url('/fonts/Vendura-SemiBold-Demo.otf') format('opentype');
-}
+} */
 
 html {
   scroll-behavior: smooth;
