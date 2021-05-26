@@ -1,33 +1,54 @@
 <script>
   // Props
-  export let text
-  export let url
+  export let url = ''
+  export let isButton = false
+  export let className
 </script>
 
 <style lang="scss">
-  div {
-    --background-color: #fcd9b8;
-    --hover-color: #e09145;
-    --text-color: black;
+  @import 'src/styles/index.scss';
+  button,
+  a {
+    background-color: $primary;
+    color: $black;
+    border-radius: $buttonRadius;
+    box-shadow: 5px 5px 10px $shadow;
     width: 200px;
-    height: 50px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  div {
     display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
     align-items: center;
+    width: 200px;
+    height: 35px;
     a {
-      box-shadow: 5px 5px 10px black;
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      justify-content: center;
+      align-items: center;
       text-decoration: none;
-      border-radius: 2px;
-      padding: 0.5em 1em;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      transition: 0.3s;
-      &:hover {
-        background-color: var(--hover-color);
-      }
     }
   }
 </style>
 
-<div>
-  <a href={url}>{text}</a>
-</div>
+{#if !isButton}
+  <div>
+    <a href={url} class={className}>
+      <slot />
+    </a>
+  </div>
+{:else}
+  <button class={className}>
+    <slot />
+  </button>
+{/if}
