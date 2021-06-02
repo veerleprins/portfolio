@@ -7,6 +7,7 @@
 <style lang="scss">
   @import 'src/styles/index.scss';
   section {
+    padding-top: 3.5em;
     margin-bottom: 10em;
     .wrapper {
       display: flex;

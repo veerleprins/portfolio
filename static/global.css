@@ -18,7 +18,7 @@ body {
   width: 100%;
 }
 
-/* body::after {
+body::after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -40,7 +40,7 @@ body::before {
   height: 704px;
   right: 0;
   bottom: 25%;
-} */
+}
 
 @media (min-width: 400px) {
   body {

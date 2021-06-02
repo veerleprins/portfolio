@@ -8,6 +8,7 @@
   @import 'src/styles/index.scss';
 
   section {
+    padding-top: 3.5em;
     margin-bottom: calc(10em + 10vh);
     height: 500px;
   }

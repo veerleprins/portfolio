@@ -9,7 +9,7 @@
 
   h1,
   h2 {
-    font-family: 'Vendura';
+    font-family: 'Merriweather';
   }
 
   h1 {
@@ -20,6 +20,12 @@
   h2 {
     margin: 0em 0em 1em 0em;
     font-size: $h2-size;
+  }
+  @include size-m {
+    h1 {
+      font-size: 9em;
+      line-height: 1.3;
+    }
   }
 </style>
 

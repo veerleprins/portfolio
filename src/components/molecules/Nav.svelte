@@ -66,17 +66,17 @@
     </li>
     <li>
       <a
-        href="#work"
-        class={current === 'work' ? 'active' : ''}
-        on:click={() => (current = 'work')}
-      >Work</a>
-    </li>
-    <li>
-      <a
         href="#about"
         class={current === 'about' ? 'active' : ''}
         on:click={() => (current = 'about')}
       >About</a>
+    </li>
+    <li>
+      <a
+        href="#work"
+        class={current === 'work' ? 'active' : ''}
+        on:click={() => (current = 'work')}
+      >Work</a>
     </li>
     <li>
       <a
