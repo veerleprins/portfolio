@@ -1,6 +1,6 @@
 $phone-xl: 460px;
-$tablet: 760px;
-$tablet-xl: 1080px;
+$tablet: 770px;
+$tablet-xl: 1110px;
 $laptop: 1240px;
 $desktop: 1650px;
 $desktop-xl: 2000px;
@@ -49,8 +49,3 @@ $desktop-xxl: 2000px;
     @content;
   }
 }
-
-// // Use"
-// @include size-s {
-//   // code.....
-// }

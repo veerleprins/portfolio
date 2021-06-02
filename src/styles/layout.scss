@@ -1,27 +1,18 @@
 @import './vars/context.scss';
 
-* {
-  margin: 0;
-  padding: 0;
+main {
+  position: relative;
+  top: 60px;
+  width: 90vw;
+  margin: 0 auto;
 }
 
-html {
-  background-color: $black;
-}
-
-body {
-  width: 100% !important;
-  font-size: 14px;
-  overflow-x: hidden;
-  @include size-s {
-    font-size: 16px;
+@include size-m {
+  main {
+    max-width: 1000px;
   }
 }
 
-main {
-  width: 100%;
-}
-
-@media (prefers-color-scheme: light) {
-  // lightscheme
-}
+// @media (prefers-color-scheme: light) {
+//   // lightscheme
+// }
