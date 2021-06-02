@@ -5,6 +5,7 @@
 
 <style lang="scss">
   @import 'src/styles/index.scss';
+
   label {
     display: flex;
     display: -webkit-box;
@@ -12,6 +13,7 @@
     flex-direction: column;
     margin-bottom: 2em;
   }
+
   @include size-s {
     label {
       width: 100%;
