@@ -1,8 +1,8 @@
 <script>
   // Props
-  export let url = ''
+  export let href = ''
   export let isButton = false
-  export let className
+  export let className = ''
 </script>
 
 <style lang="scss">
@@ -13,8 +13,10 @@
     color: $black;
     border-radius: $buttonRadius;
     box-shadow: 5px 5px 10px $shadow;
+    padding: 0.5rem 0;
     width: 200px;
-    height: 35px;
+    font-size: 1rem;
+    // height: 35px;
     border: none;
     cursor: pointer;
     transition: 0.3s;
@@ -39,16 +41,30 @@
       text-decoration: none;
     }
   }
+
+  button {
+    &.prev,
+    &.next {
+      color: white;
+      background-color: #292929;
+      box-shadow: none;
+    }
+    &.disabled {
+      background-color: #131313;
+      color: gray;
+      cursor: unset;
+    }
+  }
 </style>
 
 {#if !isButton}
   <div>
-    <a href={url} class={className}>
+    <a {href}>
       <slot />
     </a>
   </div>
 {:else}
-  <button class={className}>
+  <button class={className !== '' ? className : ''} on:click>
     <slot />
   </button>
 {/if}
