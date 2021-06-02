@@ -9,6 +9,7 @@
 <style lang="scss">
   @import 'src/styles/index.scss';
   form {
+    height: 100%;
     display: flex;
     display: -webkit-box;
     display: -webkit-flex;
@@ -37,24 +38,17 @@
   <fieldset>
     <Label labelName="name">
       Name:
-      <Input inputType="text" inputName="name" placeholderText="John Doe" />
+      <Input type="text" name="name" placeholder="John Doe" />
     </Label>
 
     <Label labelName="mail">
       Email:
-      <Input
-        inputType="text"
-        inputName="mail"
-        placeholderText="johndoe@mail.com"
-      />
+      <Input type="text" name="mail" placeholder="johndoe@mail.com" />
     </Label>
   </fieldset>
   <Label labelName="message">
     Description:
-    <Textarea
-      textareaName="message"
-      placeholderText="Job offer, Project details, etc."
-    />
+    <Textarea name="message" placeholder="Job offer, Project details, etc." />
   </Label>
   <Button isButton>Send</Button>
 </form>
