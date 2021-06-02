@@ -1,12 +1,15 @@
 <script>
+  // Internals
   let current = 'home'
 </script>
 
 <style lang="scss">
+  @import 'src/styles/index.scss';
   nav {
-    --color-hover: #fcd9b8;
     ul {
       display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
       visibility: hidden;
       flex-direction: row;
       justify-content: flex-end;
@@ -15,6 +18,8 @@
         list-style-type: none;
         a {
           display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
           align-items: center;
           padding: 0.5em 1.5em;
           width: 100%;
@@ -23,16 +28,14 @@
           transition: 0.4s ease-in-out;
           color: #717171;
           &:hover {
-            color: var(--color-hover);
+            color: $primary;
           }
           &.active {
-            color: var(--color-hover);
+            color: $primary;
           }
         }
         &:last-child {
-          display: flex;
           justify-content: center;
-          align-items: center;
           .fa-moon {
             color: black;
             width: 20px;
@@ -58,36 +61,29 @@
       <a
         href="#home"
         class={current === 'home' ? 'active' : ''}
-        on:click={() => (current = 'home')}>Home</a
-      >
+        on:click={() => (current = 'home')}
+      >Home</a>
     </li>
     <li>
       <a
         href="#work"
         class={current === 'work' ? 'active' : ''}
-        on:click={() => (current = 'work')}>Work</a
-      >
-    </li>
-    <li>
-      <a
-        href="#blogs"
-        class={current === 'blogs' ? 'active' : ''}
-        on:click={() => (current = 'blogs')}>Blogs</a
-      >
+        on:click={() => (current = 'work')}
+      >Work</a>
     </li>
     <li>
       <a
         href="#about"
         class={current === 'about' ? 'active' : ''}
-        on:click={() => (current = 'about')}>About</a
-      >
+        on:click={() => (current = 'about')}
+      >About</a>
     </li>
     <li>
       <a
         href="#contact"
         class={current === 'contact' ? 'active' : ''}
-        on:click={() => (current = 'contact')}>Contact</a
-      >
+        on:click={() => (current = 'contact')}
+      >Contact</a>
     </li>
   </ul>
 </nav>
