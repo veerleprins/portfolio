@@ -1,7 +1,7 @@
 <script>
   // Props
-  export let textareaName
-  export let placeholderText
+  export let name
+  export let placeholder
 </script>
 
 <style lang="scss">
@@ -27,9 +27,4 @@
   }
 </style>
 
-<textarea
-  name={textareaName}
-  cols="30"
-  rows="2"
-  placeholder={placeholderText}
-/>
+<textarea {name} cols="30" rows="2" {placeholder} />
