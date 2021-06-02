@@ -1,0 +1,32 @@
+export let cases = [
+  {
+    title: 'HorrorInfo',
+    subtitle: 'HorrorInfo - An application to find horror information',
+    page_slug: '/cases/horrorinfo',
+    slug: 'horrorinfo',
+    image_banner: '/assets/images/Mockups/HorrorInfo.svg',
+    image_banner_alt: 'Mockup of HorrorInfo',
+    concept: 'text here',
+    github_repo: 'https://github.com/veerleprins/HorrorInfo',
+  },
+  {
+    title: 'The electric car',
+    subtitle: 'De Volkskrant - The electric Car in the Netherlands',
+    page_slug: '/cases/electric-car-in-the-netherlands',
+    slug: 'electric-cars-netherlands',
+    image_banner: './assets/images/Mockups/ElectricCar.svg',
+    image_banner_alt: 'Mockup of Electric Car.',
+    concept: 'text here',
+    github_repo: 'https://github.com/veerleprins/frontend-applications',
+  },
+  {
+    title: 'Dat.io',
+    subtitle: 'Dat.io - An application to date',
+    page_slug: '/cases/datio',
+    slug: 'datio',
+    image_banner: './assets/images/Mockups/test-frame.svg',
+    image_banner_alt: 'Mockup of Dat.io.',
+    concept: 'text here',
+    github_repo: 'https://github.com/joordy/Dat.io',
+  },
+]
