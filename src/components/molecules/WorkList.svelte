@@ -1,88 +1,57 @@
 <script>
   // Props
-
-  let workList = [
-    {
-      URL: '#',
-      title: 'HorrorInfo - Find information about horrors',
-      imgSRC: 'assets/Mockups/HorrorInfo.svg',
-      imgAlt: 'Mockup of HorrorInfo.',
-    },
-    {
-      URL: '#',
-      title: 'De Volkskrant - Electric Car in the Netherlands',
-      imgSRC: 'assets/Mockups/ElectricCar.svg',
-      imgAlt: 'Mockup of Electric Car.',
-    },
-    {
-      URL: '#',
-      title: 'Dat.io - An application to date',
-      imgSRC: 'assets/Mockups/test-frame.svg',
-      imgAlt: 'Mockup of Dat.io.',
-    },
-    {
-      URL: '#',
-      title: '',
-      imgSRC: '',
-      imgAlt: '',
-    },
-  ]
+  export let project
 </script>
 
 <style lang="scss">
-  ul {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 2em auto;
-    li {
-      list-style-type: none;
-      border-radius: 10px;
-      margin: 4em 0;
-      height: 300px;
-      transition: 1s ease-in-out;
-      &:nth-child(odd) {
-        transform: translateX(-12%);
+  @import 'src/styles/index.scss';
+  li {
+    background-color: #292929;
+    list-style-type: none;
+    height: auto;
+    padding: 2em;
+    a {
+      color: rgb(245, 245, 245);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      h3 {
+        color: gray;
+        font-size: 12px;
+        letter-spacing: 4px;
+        margin-bottom: 2em;
       }
-      &:nth-child(even) {
-        transform: translateX(12%);
+      h4 {
+        font-size: 2em;
+        margin-bottom: 1em;
       }
-      a {
-        text-decoration: none;
+      img {
         width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        h3 {
-          order: 2;
-          padding-top: 1em;
-        }
-        img {
-          order: 1;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-        }
-        &:hover {
-          img {
-            transform: scale(1.1);
-          }
-        }
+        height: 50vw;
+        max-height: 300px;
+        object-fit: cover;
+        margin-bottom: 2em;
       }
+      p {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+  @include size-s {
+    li {
+      min-width: 85%;
     }
   }
 </style>
 
-<ul>
-  {#each workList as work}
-    <li>
-      <a href={work.URL}>
-        <h3>{work.title}</h3>
-        <img src={work.imgSRC} alt={work.imgAlt} />
-      </a>
-    </li>
-  {/each}
-</ul>
+<li>
+  <a href={project.github_repo} target="_blank">
+    <h3>CASE</h3>
+    <h4>{project.title}</h4>
+    <img src={project.image_banner} alt={project.image_banner_alt} />
+    <p>View work</p>
+  </a>
+</li>
