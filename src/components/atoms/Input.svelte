@@ -1,8 +1,8 @@
 <script>
   // Props
-  export let inputType
-  export let inputName
-  export let placeholderText
+  export let type
+  export let name
+  export let placeholder
 </script>
 
 <style lang="scss">
@@ -16,6 +16,7 @@
     height: 30px;
     margin-top: 1em;
     padding: 0 5px;
+    font-size: 14px;
     &:focus {
       outline: none;
       background-color: $border;
@@ -25,6 +26,11 @@
   input[type='text'] {
     color: $secondary;
   }
+  @include size-s {
+    input {
+      font-size: 16px;
+    }
+  }
 </style>
 
-<input type={inputType} name={inputName} placeholder={placeholderText} />
+<input {type} {name} {placeholder} />
