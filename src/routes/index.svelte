@@ -3,11 +3,14 @@
   import Home from '../components/templates/Home.svelte'
 </script>
 
-<style>
+<style lang="scss">
+  @import 'src/styles/index.scss';
 </style>
 
 <svelte:head>
   <title>Veerle Prins | Portfolio</title>
 </svelte:head>
 
-<Home />
+<main>
+  <Home />
+</main>
