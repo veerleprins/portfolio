@@ -65,7 +65,7 @@
         During the past three years of the Communication & Multimedia Design
         course at the Amsterdam University of Applied Sciences, I have mainly
         developed an interest in
-        <span>Front-end development</span>. For this reason I have chosen to
+        <span>front-end development</span>. For this reason I have chosen to
         follow as many tech courses as possible and I am currently following the
         minor Web Design & Development.
       </p>
@@ -77,7 +77,7 @@
       </p>
     </article>
     <div>
-      <Image src="/assets/images/IMG_7505.jpg" alt="Image of Veerle Prins" />
+      <Image src="/assets/images/img_veerle.png" alt="Image of Veerle Prins" />
     </div>
   </div>
 </section>

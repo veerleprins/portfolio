@@ -12,5 +12,5 @@
 </style>
 
 <Title>Hi, my name is Veerle</Title>
-<p>A Front-end developer who loves being creative and writing code</p>
+<p>A front-end developer who loves being creative and writing code</p>
 <Button href="#work">View my work</Button>
